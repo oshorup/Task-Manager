@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Add_notes"
+    android:background="#8ACFD4">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:gravity="center"
+        android:background="@color/colorPrimary"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD YOUR TASKS"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TIP1"
+        android:hint="Title"
+        app:hintTextColor="@android:color/black"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        >
+
+        <EditText
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/add_notes_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TIP2"
+        android:hint="Body"
+        app:hintTextColor="@android:color/black"
+        android:layout_below="@id/TIP1"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        >
+
+        <EditText
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/add_notes_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+   <Button
+       android:onClick="showDatePickerDialog"
+       android:layout_marginStart="10dp"
+       android:layout_alignParentStart="true"
+       android:layout_width="wrap_content"
+       android:layout_height="55dp"
+       android:layout_below="@id/TIP2"
+       android:text="  Select Date  "
+       android:textColor="@android:color/white"
+       android:backgroundTint="@color/colorPrimary"
+       android:layout_marginTop="20dp"
+       android:id="@+id/add_notes_date"/>
+
+    <Button
+        android:onClick="showStartTimePickerDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:layout_below="@id/TIP2"
+        android:text="   start time   "
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/colorPrimary"
+        android:id="@+id/add_notes_start_time"/>
+
+
+    <RadioButton
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:id="@+id/add_notes_isImp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="      Important?"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/add_notes_date"
+        android:textAlignment="gravity"
+        android:gravity="center|center_vertical"
+        android:layoutDirection="rtl"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="10dp"/>
+
+    <Button
+        android:id="@+id/add_notes_save_task"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Save task"
+        android:textSize="17sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_below="@id/add_notes_isImp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="70dp"/>
+
+
+
+</RelativeLayout>

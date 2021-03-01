@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.NotesListPage">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/notesListToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#4B0082">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Manager"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
+
+            <ImageView
+                android:id="@+id/notesList_notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/notification"
+                android:layout_toLeftOf="@id/notesList_share"
+                android:layout_marginEnd="15dp"
+                />
+
+            <ImageView
+                android:id="@+id/notesList_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/share" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView_notesList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/notesListToolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-6254720266276269/9485505647">
+
+    </com.google.android.gms.ads.AdView>
+    <TextView
+        android:id="@+id/greetText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hii,"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="40dp"
+        android:textSize="20sp"
+        android:textColor="#4B0082"
+        android:textStyle="bold"
+        android:layout_below="@id/adView_notesList"/>
+    <TextView
+        android:id="@+id/greetText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/greetText"
+        android:text="Enjoy your task..."
+        android:textSize="20sp"
+        android:layout_marginTop="-5dp"
+        android:layout_marginStart="40sp"
+        android:textColor="#4B0082"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/overview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/greetText2"
+        android:layout_marginStart="40dp"
+        android:textStyle="normal"
+        android:textColor="#4B0082"
+        android:text="Overview"
+        android:layout_marginTop="20dp"
+       />
+
+    <HorizontalScrollView
+        android:id="@+id/scrl_overviews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/overview"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_centerHorizontal="true">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            android:layout_margin="3.5dp"
+            android:elevation="10dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="#FFDC81">
+
+                <TextView
+                    android:id="@+id/totalTask"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="7dp"
+                    android:text="12"
+                    android:singleLine="true"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Task"
+                    android:layout_below="@id/totalTask"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="3dp"
+                    />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            android:layout_margin="3.5dp"
+            android:elevation="10dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="#B2F78A"
+               >
+
+                <TextView
+                    android:id="@+id/taskFinished"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="7dp"
+                    android:text="12"
+                    android:singleLine="true"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Finished "
+                    android:layout_below="@id/taskFinished"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@android:color/white"
+                    android:layout_margin="3dp"
+                    />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            android:layout_margin="3dp"
+            android:elevation="10dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="#FF758F">
+
+                <TextView
+                    android:id="@+id/taskCrucial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="7dp"
+                    android:text="10"
+                    android:singleLine="true"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Important"
+                    android:layout_below="@id/taskCrucial"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@android:color/white"
+                    android:layout_margin="3dp"
+                    />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/dummy_taskList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="40dp"
+        android:text="Your Tasks"
+        android:layout_below="@id/scrl_overviews"
+        android:textColor="#4B0082"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tasks_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/dummy_taskList"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        tools:listitem="@layout/each_task_design"
+
+    />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="15dp"
+        app:rippleColor="@android:color/white"
+        android:backgroundTint="#4B0082"
+        android:clickable="true"
+        android:focusable="true"
+        app:elevation="1dp"
+        app:borderWidth="0dp"
+        app:pressedTranslationZ="1dp"
+        android:src="@drawable/plus"
+        android:elevation="10dp"
+        android:translationZ="10dp"
+        style="@style/Base.CardView"
+        app:maxImageSize="15dp"
+        />
+</RelativeLayout>
